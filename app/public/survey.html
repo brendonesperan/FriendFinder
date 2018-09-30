@@ -147,64 +147,64 @@
 
   </div>
 
+
+
+  <!-- Modal -->
+  <div id="results-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title"><strong>Best Match</strong></h2>
+      </div>
+      <div class="modal-body">
+        <h2 id="match-name"></h2>
+        <img id="match-img" src="https://media.istockphoto.com/photos/green-checkmark-picture-id503451933?k=6&m=503451933&s=612x612&w=0&h=6QQzz3myBotXfTM4SjWip6pAlB9xGlWubXJRMGGp5jE=" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  $("#submit").on("click", function (event) {
+    event.preventDefault();
+    
+      var friendData = {
+        name: $("#name").val(),
+        photo: $("#photo").val(),
+        scores: [
+          $("#one").val(),
+          $("#two").val(),
+          $("#three").val(),
+          $("#four").val(),
+          $("#five").val(),
+          $("#six").val(),
+          $("#seven").val(),
+          $("#eight").val(),
+          $("#nine").val(),
+          $("#ten").val()
+        ]
+      };
+
+      $.post("/api/friends", friendData, function (data) {
+        $("#match-name").text(data.friendName);
+        $("#match-img").attr("src", data.friendPhoto);
+        $("#results-modal").modal("toggle");
+      });
+      
+  });
+
+</script>
+
 </body>
 
 </html>
 
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-<script type="text/javascript">
-  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-
-  $(".submit").on("click", function(event) {
-    event.preventDefault();
-
-    // Here we grab the form elements
-    var newFriend = {
-      one: $("#one").val(),
-      two: $("#two").val(),
-      three: $("#three").val(),
-      four: $("#four").val(),
-      five: $("#five").val(),
-      six: $("#six").val(),
-      seven: $("#seven").val(),
-      eight: $("#eight").val(),
-      nine: $("#nine").val(),
-      ten: $("#ten").val()
-};
-
-    console.log(newFriend);
-
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
-
-    $.post("/api/friends", newFriend,
-      function(data) {
-
-        if (data) {
-          alert("Compatibility registered! Finding friend...");
-        }
-
-        else {
-          alert("Error. You may die alone.");
-        }
-
-        $("#one").val("");
-        $("#two").val("");
-        $("#three").val("");
-        $("#four").val("");
-        $("#five").val("");
-        $("#six").val("");
-        $("#seven").val("");
-        $("#eight").val("");
-        $("#nine").val("");
-        $("#ten").val("");
-      });
-
-  });
-
-</script>
