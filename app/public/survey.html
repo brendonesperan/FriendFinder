@@ -40,46 +40,97 @@
                 <label for="reserve-name">Link a photo.</label>
                 <input type="text" class="form-control" id="photoLink">
               </div>
-              <div class="form-group">
-                <label for="reserve-name">I am athletic.</label>
-                <input type="text" class="form-control" id="one">
-              </div>
-              <div class="form-group">
-                <label for="reserve-phone">I have a sense of humor.</label>
-                <input type="text" class="form-control" id="two">
-              </div>
-              <div class="form-group">
-                <label for="reserve-email">I like being outdoors.</label>
-                <input type="text" class="form-control" id="three">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">I like reading.</label>
-                <input type="text" class="form-control" id="four">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">I like to get into fights.</label>
-                <input type="text" class="form-control" id="five">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">I like playing a musical instrument.</label>
-                <input type="text" class="form-control" id="six">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">I like lookin' hot, buyin' stuff they cannot.</label>
-                <input type="text" class="form-control" id="seven">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">I like drinkin' hard, maxin' that credit card.</label>
-                <input type="text" class="form-control" id="eight">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">I like skippin' gym, scarin' her, screwin' him.</label>
-                <input type="text" class="form-control" id="nine">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">I like killer clothes, kickin' nerds in the nose!</label>
-                <input type="text" class="form-control" id="ten">
-              </div>
+              <h4>I am athletic.</h4>
+              <select class="chosen-select" id="one">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I have a sense of humor.</h4>
+              <select class="chosen-select" id="two">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I like being outdoors.</h4>
+              <select class="chosen-select" id="three">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I like reading.</h4>
+              <select class="chosen-select" id="four">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I like to do things out of sheer curiosity.</h4>
+              <select class="chosen-select" id="five">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I like playing a musical instrument.</h4>
+              <select class="chosen-select" id="six">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I like lookin' hot, buyin' stuff they cannot.</h4>
+              <select class="chosen-select" id="seven">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I like drinkin' hard, maxin' that credit card.</h4>
+              <select class="chosen-select" id="eight">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I like skippin' gym, scarin' her, screwin' him.</h4>
+              <select class="chosen-select" id="nine">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <h4>I like killer clothes, kickin' nerds in the nose!</h4>
+              <select class="chosen-select" id="ten">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+
               <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
           </div>
@@ -112,16 +163,16 @@
 
     // Here we grab the form elements
     var newFriend = {
-      one: $("#one").val().trim(),
-      two: $("#two").val().trim(),
-      three: $("#three").val().trim(),
-      four: $("#four").val().trim(),
-      five: $("#five").val().trim(),
-      six: $("#six").val().trim(),
-      seven: $("#seven").val().trim(),
-      eight: $("#eight").val().trim(),
-      nine: $("#nine").val().trim(),
-      ten: $("#ten").val().trim()
+      one: $("#one").val(),
+      two: $("#two").val(),
+      three: $("#three").val(),
+      four: $("#four").val(),
+      five: $("#five").val(),
+      six: $("#six").val(),
+      seven: $("#seven").val(),
+      eight: $("#eight").val(),
+      nine: $("#nine").val(),
+      ten: $("#ten").val()
 };
 
     console.log(newFriend);
