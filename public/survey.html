@@ -150,7 +150,7 @@
 
 
   <!-- Modal -->
-  <div id="bestFriendModal" class="modal fade" role="dialog">
+  <div id="results-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -160,8 +160,8 @@
           <h3 class="modal-title"><strong>Best Match</strong></h3>
         </div>
         <div class="modal-body">
-          <h2 id="bestFriendName"></h2>
-          <img id="bestFriendImg" src="https://ak.picdn.net/assets/cms/97e1dd3f8a3ecb81356fe754a1a113f31b6dbfd4-stock-photo-photo-of-a-common-kingfisher-alcedo-atthis-adult-male-perched-on-a-lichen-covered-branch-107647640.jpg" 
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="http://thepurplefig.com/wp-content/uploads/2015/04/bestfriends.gif" 
             alt="" height="250" width="250">
         </div>
         <div class="modal-footer">
@@ -195,6 +195,7 @@
       };
 
       $.post("/api/friends", friendData, function (data) {
+        console.log(data);
         $("#match-name").text(data.friendName);
         $("#match-img").attr("src", data.friendPhoto);
         $("#results-modal").modal("toggle");
